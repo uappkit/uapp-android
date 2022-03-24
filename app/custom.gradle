@@ -1,0 +1,3 @@
+dependencies {
+    // implementation files(System.properties['user.home'] + '/.uappsdk/android/xxx.aar')
+}

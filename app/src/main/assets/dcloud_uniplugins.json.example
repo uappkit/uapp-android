@@ -1,0 +1,18 @@
+{
+  "nativePlugins": [
+    {
+      "plugins": [
+        {
+          "type": "module",
+          "name": "DemoA",
+          "class": "com.code0xff.module.DemoA"
+        },
+        {
+          "type": "module",
+          "name": "DemoB",
+          "class": "com.code0xff.module.DemoB"
+        }
+      ]
+    }
+  ]
+}
