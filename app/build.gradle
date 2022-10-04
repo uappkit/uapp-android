@@ -13,15 +13,6 @@ android {
         ndk {
             abiFilters 'armeabi-v7a', 'arm64-v8a'
         }
-        manifestPlaceholders = [
-                "DCLOUD_APPKEY"         : "b4ab7d1c668cbb3b257aeeabd75c29da",
-                "WX_APPID"              : "wx95039516c9f72e50",
-                "WX_SECRET"             : "123456",
-                "GETUI_APPID"           : "unipush的appid",
-                "plus.unipush.appid"    : "unipush的appid",
-                "plus.unipush.appkey"   : "unipuish的appkey",
-                "plus.unipush.appsecret": "unipush的secrety"
-        ]
         compileOptions {
             sourceCompatibility JavaVersion.VERSION_1_8
             targetCompatibility JavaVersion.VERSION_1_8
@@ -75,7 +66,7 @@ dependencies {
     releaseImplementation fileTree(dir: 'libs', include: ['*.aar'], exclude: ['debug-server-release.aar'])
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     /*uniapp所需库-----------------------开始*/
@@ -88,6 +79,9 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     implementation 'com.alibaba:fastjson:1.1.46.android'
     implementation 'com.arthenica:smart-exception-java:0.1.0'
+
+    implementation 'com.squareup.okhttp3:okhttp:3.12.12'
+    implementation 'com.squareup.okio:okio:1.15.0'
 }
 
 apply from: 'custom.gradle'
