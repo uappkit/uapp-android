@@ -12,3 +12,7 @@
 ```
 
 > Android 编译必须选择 java 11，版本太高 Gradle 版本和库的依赖目前还无法支持。等 Uniapp 离线SDK 相关库的依赖版本同步升级时，我们也会跟进升级相关版本。
+
+## License
+
+The Apache License 2. Please see [License File](LICENSE.md) for more information.
