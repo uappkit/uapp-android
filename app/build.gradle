@@ -17,6 +17,15 @@ android {
             sourceCompatibility JavaVersion.VERSION_1_8
             targetCompatibility JavaVersion.VERSION_1_8
         }
+        manifestPlaceholders = [
+                "DCLOUD_APPKEY"         : "b4ab7d1c668cbb3b257aeeabd75c29da",
+                "WX_APPID"              : "wx95039516c9f72e50",
+                "WX_SECRET"             : "123456",
+                "GETUI_APPID"           : "unipush的appid",
+                "plus.unipush.appid"    : "unipush的appid",
+                "plus.unipush.appkey"   : "unipuish的appkey",
+                "plus.unipush.appsecret": "unipush的secrety"
+        ]
     }
     signingConfigs {
         config {
@@ -62,9 +71,14 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    debugImplementation fileTree(include: ['*.aar'], dir: 'libs')
-    releaseImplementation fileTree(dir: 'libs', include: ['*.aar'], exclude: ['debug-server-release.aar'])
+    new File("$projectDir/libs.txt").eachLine { fileName ->
+        def libFile = System.properties["user.home"] + "/.uappsdk/android/SDK/libs/" + fileName
+        debugImplementation files(libFile)
+
+        if (!fileName.contains("debug-server-release.aar")) {
+            releaseImplementation files(libFile)
+        }
+    }
 
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
@@ -79,6 +93,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.12.12'
     implementation 'com.squareup.okio:okio:1.15.0'
     implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.8.0'
-}
 
-apply from: 'custom.gradle'
+    // 如果添加其他第三方库，可参照此处注释内容
+    // implementation files(System.properties['user.home'] + '/.uappsdk/android/xxx.aar')
+}
