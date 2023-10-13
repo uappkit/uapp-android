@@ -1,0 +1,15 @@
+android-gif-drawable-release@1.2.23.aar
+breakpad-build-release.aar
+debug-server-release.aar
+lib.5plus.base-release.aar
+media-release.aar
+messaging-release.aar
+oaid_sdk_1.0.25.aar
+oauth-weixin-release.aar
+payment-weixin-release.aar
+share-weixin-release.aar
+sqlite-release.aar
+statistic-release.aar
+uniapp-v8-release.aar
+weex_gcanvas-release.aar
+weex_videoplayer-release.aar
