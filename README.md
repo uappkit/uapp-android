@@ -1,3 +1,10 @@
+已通过 uapp add android 创建工程
+
+代码发布位置：
+<https://gitee.com/uappkit/platform>
+
+> 此工程将存档，不再维护，未来将移除。
+
 ## uapp android 离线工程
 
 ```
